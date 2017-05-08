@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// import { TeamsModule } from './teams/teams.module';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
-	{ path: 'teams', loadChildren: 'app/teams/teams.module#TeamsModule' }
+	{ path: '', pathMatch: 'full', redirectTo: '/home' },
+	{ path: 'home', component: HomeComponent },
 ]
 
 @NgModule({
 	imports: [
 		RouterModule.forRoot(appRoutes)
-	],
-	exports: [
-		RouterModule
 	]
 })
 export class AppRoutingModule { }
